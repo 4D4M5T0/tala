@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>MAIN SITE</title>
+</head>
+
+<body>
+    <center>
+        <h1>Witaj na stronie dla wybranej</h1>
+        <h3>Masz dwie opcje do wyboru wybierz dobrze ;3</h3>
+
+        <input id="register" type="button" value="ZAREJESTRUJ" onclick="register()">
+        <input id="login" type="button" value="ZALOGUJ" onclick="login()">
+    </center>
+
+    <script>
+        function register() {
+            window.close();
+            window.open('wypier.html', '_blank');
+        }
+
+        function login() {
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+
+</html>

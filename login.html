@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>LOGOWANIE</title>
+</head>
+
+<body onkeypress="log()">
+    <center>
+        <h2>Teraz tylko się zaloguj</h2>
+        <p>Wpisz swoje imię</p>
+        <input id="name" type="text" name="name"> <br><br>
+        <p>Wpisz swoje nazwisko</p>
+        <input id="sname" type="text" name="sname"> <br><br>
+        <p>Wpisz imię cwela</p>
+        <input id="cname" type="text" name="cname"> <br><br>
+        <input id="logo" type="button" value="ZALOGUJ" onclick="log()" >
+        <p id="error" style="color: red;"></p>
+    </center>
+    <script>
+        function log() {
+            const name = document.getElementById("name").value.trim();
+            const sname = document.getElementById("sname").value.trim();
+            const cname = document.getElementById("cname").value.trim();
+            const error = document.getElementById("error");
+
+            error.textContent = "";
+
+
+            if (name == "" || sname == "" || cname == "") {
+                error.textContent = "Wpisz dane!";}
+                else{
+                    if (name.toLowerCase() === "natalia" && sname.toLowerCase() === "auron" && cname.toLowerCase() === "czarek") {
+                window.open("tala.html", "_self");
+            }
+            else if (name.toLowerCase() !== "natalia" || sname.toLowerCase() !== "auron") {
+                error.textContent = "Niepoprawne dane logowania!";
+            }
+            else if (cname.charAt(0).toUpperCase() !== 'C') {
+                error.textContent = "Imię cwela musi zaczynać się na literę C!";
+                setTimeout(() => {
+                    window.open("login.html", "_self");
+                }, 2000);
+            }
+            else if (cname.toLowerCase() !== "czarek") {
+                error.textContent = "Niepoprawne imię cwela!";
+            }
+                }
+            
+        }
+    </script>
+</body>
+
+</html>

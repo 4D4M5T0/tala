@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>TALA</title>
+</head>
+
+<body onclick="playSound()">
+    <p>naciśnij byle gdzie, aby zobaczyć niespodziankę</p>
+    <div class="floating heart" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="floating heart" style="left: 30%; animation-delay: 1s;"></div>
+    <div class="floating heart" style="left: 50%; animation-delay: 2s;"></div>
+    <div class="floating flower" style="left: 20%; animation-delay: 0.5s;"></div>
+    <div class="floating flower" style="left: 40%; animation-delay: 1.5s;"></div>
+    <div class="floating flower" style="left: 60%; animation-delay: 2.5s;"></div>
+    <center>
+        <h1>Kocham Cię najmocniej na świecie</h1>
+        <h3>JESTEŚ NAJWAŻNIEJSZA I NAJLEPSZA PAMIĘTAJ TO:3</h3>
+        <p><b>KOCHAM CIĘ TALA NAJMOCNIEJ NA ŚWIECIE I NIE WIDZĘ ŚWIATA POZA TOBĄ, BO TY NIM JESTEŚ LOL,</b></p>
+        <p><b>KAŻDEGO DNIA NIE DOWIERZAM, ŻE MAM TAK WSPANIAŁĄ DZIEWCZYNĘ I DZIEKUJĘ CI ZA TO, ŻE JESTEŚ PRZY MNIE,</b>
+        </p>
+        <p><b>PAMIĘTAJ, ŻE JESTEŚ NAJPIĘKNIEJSZA, NAJLEPSZA, NAJMADRZEJSZA I MASZ NAJLEPSZE CIAŁO (WSZYSTKO W TOBIE JEST
+                IDEALNE),</b></p>
+        <p><b>A TYM CHCIAŁBYM CI PODZIĘKOWAĆ ZA WSZYSTKO CO DLA MNIE ZROBIŁAŚ I ROBISZ, BO BARDZO DUŻO TO DLA MNIE ZNACZY
+                I CHCE, ŻEBYŚ TO WIEDZIAŁA
+            </b></p>
+
+    </center>
+
+    <div class="floating heart" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="floating heart" style="left: 30%; animation-delay: 1s;"></div>
+    <div class="floating heart" style="left: 50%; animation-delay: 2s;"></div>
+    <div class="floating flower" style="left: 20%; animation-delay: 0.5s;"></div>
+    <div class="floating flower" style="left: 40%; animation-delay: 1.5s;"></div>
+    <div class="floating flower" style="left: 60%; animation-delay: 2.5s;"></div>
+
+    <div class="image-grid">
+        <img class="big" src="tala9.jpg" alt="Tala 9" onclick="openImage(this)">
+        <img class="small" src="tala4.jpg" alt="Tala 4" onclick="openImage(this)">
+        <img class="small" src="tala6.jpg" alt="Tala 6" onclick="openImage(this)">
+        <img class="big" src="tala3.jpg" alt="Tala 3" onclick="openImage(this)">
+        <img class="small" src="tala7.jpg" alt="Tala 7" onclick="openImage(this)">
+        <img class="big" src="tala1.jpg" alt="Tala 1" onclick="openImage(this)">
+        <img class="small" src="tala8.jpg" alt="Tala 8" onclick="openImage(this)">
+        <img class="big" src="tala2.jpg" alt="Tala 2" onclick="openImage(this)">
+        <img class="small" src="tala5.jpg" alt="Tala 5" onclick="openImage(this)">
+        <img class="big" src="tala10.jpg" alt="Tala 10" onclick="openImage(this)">
+    </div>
+    <audio id="clickSound" loop>
+        <source src="The Kid LAROI - NIGHTS LIKE THIS (Official Audio).mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        function playSound() {
+            document.getElementById('clickSound').play();
+        }
+        function openImage(img) {
+            if (img.classList.contains('enlarged')) {
+                img.classList.remove('enlarged');
+                document.querySelector('.overlay').remove();
+            } else {
+                img.classList.add('enlarged');
+
+                const overlay = document.createElement('div');
+                overlay.classList.add('overlay');
+                document.body.appendChild(overlay);
+
+                overlay.onclick = () => {
+                    img.classList.remove('enlarged');
+                    overlay.remove();
+                };
+            }
+        }
+    </script>
+</body>
+
+</html>
